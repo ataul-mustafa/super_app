@@ -1,0 +1,126 @@
+.authContainer{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.authContainer > section {
+    width: 50%;
+    height: 100%;
+}
+
+.authContainer > .sideImage{
+    background-image: url(../images/signup.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.authContainer > .sideImage > h1 {
+    width: 100%;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 55px;
+    margin: 0 0 10% 5%;
+    font-weight: 600;
+}
+
+.authContainer > .signupPage {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.authContainer > .signupPage > .signupContainer {
+    width: 65%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.authContainer > .signupPage > .signupContainer > h1 {
+    font-family: Single Day;
+    font-size: 63px;
+    font-weight: 400;
+    color: #72DB73;
+    line-height: 35%;
+}
+
+.authContainer > .signupPage > .signupContainer > h2 {
+    font-family: DM Sans;
+    font-size: 25px;
+    font-weight: 400;
+    color: #fff;
+    margin: 15px 0;
+}
+
+.authContainer > .signupPage > .signupContainer > .input {
+    width: 100%;
+}
+
+.authContainer > .signupPage > .signupContainer > .input > input {
+    font-family: DM Sans;
+    font-size: 20px;
+    font-weight: 400;
+    width: 100%;
+    padding: 10px;
+    background-color: #292929;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.authContainer > .signupPage > .signupContainer > .input > p, .authContainer > .signupPage > .signupContainer > .checkBox > p{
+    color: red;
+    font-family: DM Sans;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+    font-size: 14px;
+    height: 13px;
+}
+
+.authContainer > .signupPage > .signupContainer > .checkBox{
+    width: 100%;
+    justify-content: flex-start;
+    margin: 10px 0;
+    font-family: DM Sans;
+    color: #7C7C7C;
+}
+
+.authContainer > .signupPage > .signupContainer > .checkBox > input {
+    margin-right: 10px;
+}
+
+.authContainer > .signupPage > .signupContainer > button {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+    background-color: #72DB73;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 35px;
+    border: none;
+    cursor: pointer;
+}
+
+.authContainer > .signupPage > .signupContainer > p{
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 400; 
+    letter-spacing: 1px;
+    color: #7C7C7C;
+    margin: 5px;
+}
+
+.authContainer > .signupPage > .signupContainer > p > span {
+    color: #72DB73;
+}
