@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import warningIcon from '../images/warning.png';
+import warningIcon from '../images/warning.png';
 import './Categories.css'
 import image1 from '../images/categories/image 2.png'
 import image2 from '../images/categories/image 3.png'
@@ -155,7 +155,7 @@ function Categories() {
                         {
                             error &&
                             <div className='warning'>
-                                {/* <img src={warningIcon} alt="warn" /> */}
+                                <img src={warningIcon} alt="warn" />
                                 <span>Minimum 3 category required</span>
                             </div>
                         }
