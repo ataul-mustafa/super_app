@@ -1,0 +1,156 @@
+.cateContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.cateContainer > .cateBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cateContainer > .cateBox > .left {
+    margin: auto;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cateContainer > .cateBox > .left > .leftBox {
+    height: 70%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cateContainer > .cateBox > .left > .leftBox > h1 {
+    font-family: Single Day;
+    font-size: 71px;
+    font-weight: 400;
+    color: #72DB73;
+}
+
+.cateContainer > .cateBox > .left > .leftBox > h2{
+    color: #fff;
+    font-family: Roboto;
+    font-size: 3rem;
+    line-height: 60px;
+    font-weight: 500;
+}
+
+.cateContainer > .cateBox > .left > .leftBox > .cateCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cateContainer > .cateBox > .left > .leftBox > .cateCard > div {
+    width: 42%;
+    background-color: #148A08;
+    padding: 5px 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+    font-family: Roboto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cateContainer > .cateBox > .left > .leftBox > .cateCard > div > h1 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.cateContainer > .cateBox > .left > .leftBox > .cateCard > div > span {
+    text-align: right;
+    color: #085C00;
+    cursor: pointer;
+}
+
+.cateContainer > .cateBox > .left > .leftBox > .warning > img {
+    width: 10%;
+}
+
+.cateContainer > .cateBox > .left > .leftBox > .warning > span {
+    color: red;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 5%;
+}
+
+
+.cateContainer > .cateBox > .right {
+    width: 60%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cateContainer > .cateBox > .right > .catCardBox{
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.cateContainer > .cateBox > .right > button {
+    font-family: DM Sans;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 15px;
+    background-color: #148A08;
+    border-radius: 15px;
+    color: #fff;
+    border: none;
+    position: absolute;
+    bottom: 5%;
+    right: 6%;
+    cursor: pointer;
+}
+
+
+
+.cardContainer{
+    width: 29%;
+    height: 30%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    cursor: pointer;
+}
+
+.cardContainer > h1 {
+    width: 90%;
+    color: #fff;
+    font-family: DM Sans;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.cardContainer > img {
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    border-radius: 10px;
+}

@@ -1,7 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './SignUp.css'
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        let fetchedUserInfo = JSON.parse(localStorage.getItem("userData"));
+
+        if(fetchedUserInfo){
+            console.log(fetchedUserInfo);
+            navigate("/");
+        } 
+    
+    }, [navigate]);
 
     let Initailerrors = {
         nameError : "",
@@ -49,9 +62,8 @@ function SignUp() {
 
         if(signUpData.userName === ""){
             errors.userNameError = "Username is required";
-        }else if(signUpData.userName.length < 10){
-            console.log(signUpData.userName.length)
-            errors.userNameError = "Username must have atleast 10 chars";
+        }else if(signUpData.userName.length < 8){
+            errors.userNameError = "Minimum 8 chars required";
         }
 
         if(signUpData.email === ""){
@@ -63,7 +75,7 @@ function SignUp() {
         if(signUpData.mobile === ""){
             errors.mobileError = "Mobile no. is required";
         }else if(signUpData.mobile.length !== 10){
-            errors.mobileError = "Mobile no. can have only 10 digits";
+            errors.mobileError = "Mobile no. must contain 10 digits";
         }
 
         if(signUpData.checkBox === false){
@@ -74,8 +86,8 @@ function SignUp() {
 
 
         if(errors.nameError === "" && errors.userNameError === "" && errors.emailError === "" && errors.mobileError === "" && errors.checkBoxError === "" ){
-            localStorage.setItem('userData', {...signUpData})
-            console.log(signUpData);
+            localStorage.setItem('userData', JSON.stringify({...signUpData}))
+            navigate('/categories');
         } else {
             console.log(errors);
             setError(errors);
@@ -85,7 +97,6 @@ function SignUp() {
     const handleSubmit = (e) =>{
         e.preventDefault();
         validation();
-        // console.log(error);
     }
 
     return (
