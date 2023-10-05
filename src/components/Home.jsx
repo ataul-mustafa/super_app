@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import profileImage from './images/profileImage.jpg'
+import profileImage from './images/image 14.png'
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +33,7 @@ function Home() {
                         <div className="profileCard">
                             <div className="profileBox">
                                 <section className="left">
-                                    <img src={profileImage} alt="" />
+                                    <img src={profileImage} alt="profile" />
                                 </section>
                                 <section className="right">
                                     <div className="userInfo">
@@ -61,4 +61,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;
