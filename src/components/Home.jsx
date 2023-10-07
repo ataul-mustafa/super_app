@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import profileImage from './images/image 14.png'
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
+import ProfileCard from './profileCard/ProfileCard';
+import WetherTime from './wether&Date/WetherTime';
+import News from './News/News';
 
 function Home() {
     const navigate = useNavigate();
@@ -30,31 +32,12 @@ function Home() {
             <div className="centerBox">
                 <div className="homeWrapper">
                     <section className="left">
-                        <div className="profileCard">
-                            <div className="profileBox">
-                                <section className="left">
-                                    <img src={profileImage} alt="profile" />
-                                </section>
-                                <section className="right">
-                                    <div className="userInfo">
-                                        <h2>{userInfo.profileInfo.name}</h2>
-                                        <h3>{userInfo.profileInfo.email}</h3>
-                                        <h1>{userInfo.profileInfo.userName}</h1>
-                                    </div>
-                                    <div className="categories">
-                                        {
-                                            userInfo.categories &&
-                                            (userInfo.categories).map((item, index)=>(
-                                                <button>{item.title}</button>
-                                            ))
-                                        }
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                        <div className="weatherTime">weatherTime</div>
+                        <ProfileCard userInfo={userInfo} />
+                        <WetherTime />
                     </section>
-                    <section className="right">News</section>
+                    <section className="right">
+                        <News />
+                    </section>
                 </div>
             </div>
         </div>

@@ -1,0 +1,101 @@
+.weatherTime{
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.weatherTime > .TimeDate {
+    background-color: #FF4ADE;
+    height: 30%;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.weatherTime > .wether {
+    background-color: #101744;
+    height: 70%;
+    border-radius: 0 0 20px 20px;
+    padding: 2% 0;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.weatherTime > .wether > .rain{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    align-items: center;
+}
+.weatherTime > .wether > .temp{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weatherTime > .wether > .separator{
+    width: 2px;
+    height: 60%;
+    margin: auto;
+    background-color: #fff;
+}
+
+.weatherTime > .wether > .temp > .celcius{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.weatherTime > .wether > .temp > .mbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+.weatherTime > .wether > .temp > .mbar > .mbarIcon {
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+.weatherTime > .wether > .wind{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 300;
+}
+
+.weatherTime > .wether > .wind > .windSec{
+    display: flex;
+    padding: 0 20% 0 10%;
+}
+
+.weatherTime > .wether > .wind > .windSec > p{
+    width: 50%;
+}
+
+.weatherTime > .wether > .wind > .windSec > .icon, .weatherTime > .wether > .wind > .humadity > .icon{
+    font-size: 2rem;
+    margin-right: 8px;
+}
+
+.weatherTime > .wether > .wind > .humadity{
+    display: flex;
+    padding: 0 20% 0 10%;
+    justify-content: space-between;
+}
