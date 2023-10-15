@@ -45,7 +45,9 @@ function Home() {
                                 <NoteKeeper />
                             </div>
                         </div>
-                        
+                        <div className="lower">
+                            <Timer />
+                        </div>
                     </section>
                     <section className="right">
                         <News />
