@@ -1,0 +1,55 @@
+.setTimerCon{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 3% 0;
+    color: #949494;
+}
+
+.setTimerCon > .heading, .setTimerCon > .setTime{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setTimerCon > .heading > h1{
+    width: 30%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+.setTimerCon > .setTime > div {
+    width: 30%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.setTimerCon > .setTime > div > h1, .setTimerCon > .setTime > h1{
+    font-weight: 300;
+    line-height: 20%;
+    color: #fff;
+}
+
+.setTimerCon > .setTime > div > .icon{
+    font-size: 3rem;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.setTimerCon > .btn{
+    width: 70%;
+    margin-left: 5%;
+    background-color: #FF6A6A;
+    color: #fff;
+    border: none;
+    padding: 3px 0;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+

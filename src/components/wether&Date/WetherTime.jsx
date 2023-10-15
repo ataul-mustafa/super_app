@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './WetherTime.css'
-import ThunderstormOutlinedIcon from '@mui/icons-material/ThunderstormOutlined';
-import CloudDoneOutlinedIcon from '@mui/icons-material/CloudDoneOutlined';
-import CloudOffOutlinedIcon from '@mui/icons-material/CloudOffOutlined';
+
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import AirIcon from '@mui/icons-material/Air';
 import OpacityIcon from '@mui/icons-material/Opacity';
@@ -31,7 +29,6 @@ function WetherTime() {
         let hours = date.getHours();
         let amPm = 'AM';
         if (hours > 12) {
-            console.log(hours)
             hours = hours - 12;
             amPm = 'PM'
         } else if (hours === 0) {
@@ -53,22 +50,10 @@ function WetherTime() {
                 const data = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
                 const weatherData = await data.json();
 
-                let RainIcon, RainSpeed;
-                if(weatherData.current.precip_mm > 10){
-                    RainIcon = () => <ThunderstormOutlinedIcon style={{ fontSize: '4rem' }} />;
-                    RainSpeed = "Heavy Rain";
-                } else if (weatherData.current.precip_mm > 2){
-                    RainIcon = () => <CloudDoneOutlinedIcon style={{ fontSize: '4rem' }} />;
-                    RainSpeed = "Slow Rain";
-                } else {
-                    RainIcon = () => <CloudOffOutlinedIcon style={{ fontSize: '4rem' }} />;
-                    RainSpeed = "No Rain";
-                }
-
                 setWether({
                     rain: {
-                        speed: RainSpeed,
-                        Icon: RainIcon,
+                        text: weatherData.current.condition.text,
+                        Icon: weatherData.current.condition.icon,
                     },
                     temp: weatherData.current.temp_c,
                     mbar: weatherData.current.pressure_mb,
@@ -80,7 +65,7 @@ function WetherTime() {
             }
         };
 
-        fetchData(); // Call the async function immediately inside useEffect
+        fetchData();
     }, []);
 
     return (
@@ -91,12 +76,10 @@ function WetherTime() {
             </div>
             <div className="wether">
                 <div className="rain">
+                    <img src={wether.rain.Icon} alt="icon" />
                     {
-                        wether.rain.Icon && wether.rain.Icon()
-                    }
-                    {
-                        wether.rain.speed && 
-                        <div className='rainSpeed'>{wether.rain.speed}</div>
+                        wether.rain.text && 
+                        <div className='rainSpeed'>{wether.rain.text}</div>
                     }
                 </div>
                 <div className="separator"></div>

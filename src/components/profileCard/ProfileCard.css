@@ -1,11 +1,11 @@
 .profileCard{
     width: 100%;
-    height: 60%;
+    height: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #5746EA;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .profileCard > .profileBox {
@@ -41,16 +41,17 @@
 
 .profileCard > .profileBox > .right > .userInfo > h2 {
     font-weight: 400;
+    font-size: 1.3rem;
 }
 
 .profileCard > .profileBox > .right > .userInfo > h3 {
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
  .profileCard > .profileBox > .right > .userInfo > h1 {
     font-weight: 500;
-    font-size: 2.8rem;
+    font-size: 2rem;
 }
 
 .profileCard > .profileBox > .right > .categories {
@@ -65,14 +66,14 @@
 
 .profileCard > .profileBox > .right > .categories > button {
     width: 45%;
-    height: 38.5%;
+    height: 35%;
     padding-left: 5%;
     text-align: left;
     background-color: #9F94FF;
     margin: 0 0 23px 0;
-    border-radius: 25px;
+    border-radius: 28px;
     letter-spacing: 1.5px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: none;
     color: #fff;
 }

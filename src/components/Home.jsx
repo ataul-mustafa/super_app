@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import ProfileCard from './profileCard/ProfileCard';
 import WetherTime from './wether&Date/WetherTime';
 import News from './News/News';
+import CountDown from './timer/countDown/CountDown';
+import SetTimer from './timer/setTimer/SetTimer';
+import Timer from './timer/Timer';
+import NoteKeeper from './NoteKeeper/NoteKeeper';
 
 function Home() {
     const navigate = useNavigate();
@@ -17,13 +21,13 @@ function Home() {
         let fetchedUserInfo = JSON.parse(localStorage.getItem("userData"));
         let fetchedUserCate = JSON.parse(localStorage.getItem("ChoosedCategories"))
 
-        if(!fetchedUserInfo){
+        if (!fetchedUserInfo) {
             navigate("/signup");
-        } else if(!fetchedUserCate){
+        } else if (!fetchedUserCate) {
             navigate('/categories')
         }
-        
-    
+
+
         setUserInfo({ ...userInfo, profileInfo: fetchedUserInfo, categories: fetchedUserCate });
     }, []);
 
@@ -32,8 +36,16 @@ function Home() {
             <div className="centerBox">
                 <div className="homeWrapper">
                     <section className="left">
-                        <ProfileCard userInfo={userInfo} />
-                        <WetherTime />
+                        <div className="upper">
+                            <div className="prfl">
+                                <ProfileCard userInfo={userInfo} />
+                                <WetherTime />
+                            </div>
+                            <div className="keeper">
+                                <NoteKeeper />
+                            </div>
+                        </div>
+                        
                     </section>
                     <section className="right">
                         <News />

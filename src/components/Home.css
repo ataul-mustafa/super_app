@@ -21,6 +21,7 @@
     justify-content: space-between;
     align-items: center;
     align-content: center;
+    margin-bottom: 3%;
 }
 
 .homeContainer > .centerBox > .homeWrapper > .left {
@@ -31,9 +32,35 @@
     justify-content: space-between;
 }
 
+.homeContainer > .centerBox > .homeWrapper > .left > .upper{
+    height: 65%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homeContainer > .centerBox > .homeWrapper > .left > .upper > .prfl{
+    height: 100%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.homeContainer > .centerBox > .homeWrapper > .left > .upper > .keeper{
+    width: 40%;
+    height: 100%;
+}
+
+.homeContainer > .centerBox > .homeWrapper > .left > .lower{
+    height: 30%;
+    width: 100%;
+    background-color: #1E2343;
+    border-radius: 10px;
+}
+
 
 .homeContainer > .centerBox > .homeWrapper > .right {
     width: 35%;
-    border: 1px solid red;
     height: 100%;
 }
