@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Entertainment.css'
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
+import navImage from '../images/image 20.png'
 
 const api_key = '9f8aae453d22e05839e627fa2df8c2eb';
 
@@ -88,6 +89,9 @@ function Entertainment() {
                     )}
                 </div>
             </div>
+            <Link to={'/'}>
+            <img className='navIcon' src={navImage} alt="" />
+            </Link>
         </div>
     );
 }

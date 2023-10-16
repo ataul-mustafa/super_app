@@ -106,7 +106,6 @@ function WetherTime() {
                         <OpacityIcon className='icon' />
                         <p>{wether.humadity}% humadity</p>
                     </div>
-                    <div className="humadity"></div>
                 </div>
             </div>
         </div>
