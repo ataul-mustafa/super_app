@@ -42,32 +42,34 @@ function News() {
         return `${splitted[1]}-${splitted[2]}-${splitted[0]}`
     }
 
-    const fetchData = async () => {
-        try {
-            const api_key = 'pub_30811f65ffb19f04bc9736ddaf7dd2d196170';
-            const topic = 'india'
-            const data = await fetch(`https://newsdata.io/api/1/news?apikey=${api_key}&q=${topic}`)
-            const jsonData = await data.json();
-            const article = jsonData.results[0];
-
-            const dateTime = article.pubDate.split(' ')
-
-            const date = setDate(dateTime[0]);
-            const time = setTime(dateTime[1]);
-
-            setNews({
-                title: article.title,
-                date,
-                time,
-                description: article.content,
-                image: article.image_url
-            })
-        } catch(error) {
-            console.log("something went wrong", error)
-        }
-    }
-
     useEffect( () => {
+
+        const fetchData = async () => {
+            try {
+                const api_key = 'pub_30811f65ffb19f04bc9736ddaf7dd2d196170';
+                const topic = 'india'
+                const data = await fetch(`https://newsdata.io/api/1/news?apikey=${api_key}&q=${topic}`)
+                const jsonData = await data.json();
+                const article = jsonData.results[0];
+    
+                const dateTime = article.pubDate.split(' ')
+    
+                const date = setDate(dateTime[0]);
+                const time = setTime(dateTime[1]);
+    
+                setNews({
+                    title: article.title,
+                    date,
+                    time,
+                    description: article.content,
+                    image: article.image_url
+                })
+            } catch(error) {
+                console.log("something went wrong", error)
+            }
+        }
+    
+
         fetchData();
     }, [])
     return (
