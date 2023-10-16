@@ -1,0 +1,76 @@
+.mainContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    /* overflow-y: scroll; */
+}
+
+.mainContainer > h1{
+    font-family: Single Day;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #72DB73;
+    padding: 1% 2%;
+}
+
+.mainContainer > .movieContainer{
+    width: 92%;
+    margin: auto;
+}
+
+.mainContainer > .movieContainer > h2{
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: left;    
+}
+
+.mainContainer > .movieContainer > .movieBox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    overflow-y: scroll;
+    /* padding-right: 2%; */
+}
+
+.mainContainer > .movieContainer > .movieBox > div{
+    margin: 5px 0;
+}
+
+.mainContainer > .movieContainer > .movieBox > div > h1{
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 42px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #878787;  
+}
+
+.mainContainer > .movieContainer > .movieBox > div > .cateData{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.mainContainer > .movieContainer > .movieBox > div > .cateData > .movieCard{
+    width: 22%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.mainContainer > .movieContainer > .movieBox > div > .cateData > .movieCard > img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}

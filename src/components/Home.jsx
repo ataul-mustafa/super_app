@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import ProfileCard from './profileCard/ProfileCard';
 import WetherTime from './wether&Date/WetherTime';
 import News from './News/News';
-import CountDown from './timer/countDown/CountDown';
-import SetTimer from './timer/setTimer/SetTimer';
 import Timer from './timer/Timer';
 import NoteKeeper from './NoteKeeper/NoteKeeper';
 
@@ -28,8 +26,12 @@ function Home() {
         }
 
 
-        setUserInfo({ ...userInfo, profileInfo: fetchedUserInfo, categories: fetchedUserCate });
-    }, []);
+        setUserInfo({ profileInfo: fetchedUserInfo, categories: fetchedUserCate });
+    }, [navigate]);
+
+    const clickBrowse = () =>{
+        navigate('/entertainment')
+    }
 
     return (
         <div className='homeContainer'>
@@ -54,6 +56,7 @@ function Home() {
                     </section>
                 </div>
             </div>
+            <button onClick={clickBrowse}>Browse</button>
         </div>
     )
 }
