@@ -47,9 +47,17 @@ function WetherTime() {
             try {
                 const apiKey = 'd63fac4a843c49c284172756230710';
                 const city = 'moradabad';
-                const data = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
+                const corsProxyUrl = 'https://cors-anywhere.herokuapp.com/';
+                const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
+        
+                const data = await fetch(corsProxyUrl + apiUrl, {
+                    headers: {
+                        'Origin': window.location.origin,
+                    },
+                });
+        
                 const weatherData = await data.json();
-
+        
                 setWether({
                     rain: {
                         text: weatherData.current.condition.text,
@@ -58,12 +66,13 @@ function WetherTime() {
                     temp: weatherData.current.temp_c,
                     mbar: weatherData.current.pressure_mb,
                     windSpeed: weatherData.current.wind_kph,
-                    humadity: weatherData.current.humidity,
+                    humidity: weatherData.current.humidity,
                 });
             } catch (error) {
                 console.error('Error fetching weather data:', error);
             }
         };
+        
 
         fetchData();
     }, []);
