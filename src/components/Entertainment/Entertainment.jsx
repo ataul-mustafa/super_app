@@ -30,30 +30,7 @@ function Entertainment() {
         return genre ? genre.genreId : null;
     };
 
-    const fetchData = async (categories) => {
-        try {
-            const fetchedMovies = await Promise.all(categories.map(async (category) => {
-                const genreId = getGenreId(category.title);
-                if (genreId) {
-                    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&with_genres=${genreId}`);
-                    const data = await response.json();
-                    console.log(data);
-                    return {
-                        category: category.title,
-                        movies: data.results.slice(0, 4).map((movie, index) => ({
-                            id: index + 1,
-                            moviePoster: getImageUrl(movie.poster_path),
-                        })),
-                    };
-                } else {
-                    return null;
-                }
-            }));
-            setMovies(fetchedMovies.filter((movie) => movie !== null));
-        } catch (error) {
-            console.error('Error fetching movie data:', error);
-        }
-    };
+    
 
     useEffect(() => {
         let fetchedUserCategories = JSON.parse(localStorage.getItem("ChoosedCategories"))
@@ -61,6 +38,32 @@ function Entertainment() {
        if (!fetchedUserCategories) {
             navigate('/categories')
         }
+
+        const fetchData = async (categories) => {
+            try {
+                const fetchedMovies = await Promise.all(categories.map(async (category) => {
+                    const genreId = getGenreId(category.title);
+                    if (genreId) {
+                        const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&with_genres=${genreId}`);
+                        const data = await response.json();
+                        console.log(data);
+                        return {
+                            category: category.title,
+                            movies: data.results.slice(0, 4).map((movie, index) => ({
+                                id: index + 1,
+                                moviePoster: getImageUrl(movie.poster_path),
+                            })),
+                        };
+                    } else {
+                        return null;
+                    }
+                }));
+                setMovies(fetchedMovies.filter((movie) => movie !== null));
+            } catch (error) {
+                console.error('Error fetching movie data:', error);
+            }
+        };
+
         
         fetchData(fetchedUserCategories);
     }, [navigate]);
