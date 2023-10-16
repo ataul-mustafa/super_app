@@ -3,7 +3,7 @@
     height: 100vh;
     background-color: #000;
     color: #fff;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
 }
 
 .mainContainer > h1{
@@ -32,9 +32,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    overflow-y: scroll;
-    /* padding-right: 2%; */
 }
 
 .mainContainer > .movieContainer > .movieBox > div{
