@@ -57,6 +57,8 @@ function WetherTime() {
                 });
         
                 const weatherData = await data.json();
+
+                console.log(weatherData);
         
                 setWether({
                     rain: {
